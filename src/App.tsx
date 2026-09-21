@@ -8,11 +8,11 @@ export const App = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
 
   const addMovie = (movie: Movie) => {
-    const isDublicate = movies.some(
+    const isDuplicate = movies.some(
       existingMovie => existingMovie.imdbId === movie.imdbId,
     );
 
-    if (!isDublicate) {
+    if (!isDuplicate) {
       setMovies(prev => [...prev, movie]);
     }
   };

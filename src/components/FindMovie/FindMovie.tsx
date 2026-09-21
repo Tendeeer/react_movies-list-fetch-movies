@@ -35,7 +35,7 @@ export const FindMovie: React.FC<Props> = ({ onAdd }) => {
           event.preventDefault();
           setLoading(true);
 
-          getMovie(query)
+          getMovie(query.trim())
             .then(result => {
               if ('Error' in result) {
                 setHasError(true);
@@ -94,10 +94,7 @@ export const FindMovie: React.FC<Props> = ({ onAdd }) => {
                 type="button"
                 className="button is-primary"
                 onClick={() => {
-                  if (movie) {
-                    onAdd(movie);
-                  }
-
+                  onAdd(movie);
                   setQuery('');
                   setMovie(null);
                 }}
